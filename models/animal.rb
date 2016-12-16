@@ -23,4 +23,11 @@ class Animal
     results = SqlRunner.run(sql)
     return results.map {|animal| Animal.new(animal)}
   end
+
+  def self.find(id)
+    sql = "SELECT * FROM animals WHERE id=#{id}"
+    animal = SqlRunner.run( sql )
+    result = Animal.new( animal.first )
+    return result
+  end
 end
