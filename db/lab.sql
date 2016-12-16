@@ -6,8 +6,9 @@ CREATE TABLE animals
 (
   id SERIAL8 primary key,
   age INT4 not null,
-  breed VARCHAR(255) not null,
-  date_arrived DATE not null
+  species VARCHAR(255) not null,
+  date_arrived DATE not null,
+  health_status VARCHAR(255) not null
   
 );
 
