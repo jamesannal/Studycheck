@@ -19,5 +19,14 @@ animal2 = Animal.new({
 })
 animal2.save
 
+animal3 = Animal.new({
+  'age' => 20,
+  'species' => "cat",
+  'date_arrived' => "2016/9/10",
+  'health_status' => "poor"
+})
+
+animal3.save
+
 binding.pry
 nil
