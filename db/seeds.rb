@@ -10,7 +10,12 @@ animal1 = Animal.new({
 
 animal1.save
 
-
+animal2 = Animal.new({
+  'age' => 4,
+  'breed' => "monkey",
+  'date_arrived' => "2016/12/11"
+})
+animal2.save
 
 binding.pry
 nil
