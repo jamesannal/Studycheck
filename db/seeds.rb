@@ -1,5 +1,6 @@
 require_relative( '../models/animal')
 require_relative( '../models/study')
+require_relative( '../models/assign')
 require('pry')
 
 animal1 = Animal.new({
@@ -25,8 +26,37 @@ animal3 = Animal.new({
   'date_arrived' => "2016/9/10",
   'health_status' => "poor"
 })
-
 animal3.save
+
+study1 = Study.new({
+  'sd' => "Bob",
+  'purpose' => "can cats do algebra?"
+  })
+study1.save
+
+study2 = Study.new({
+  'sd' => "Jeff",
+  'purpose' => "can a monkey learn to code?"
+  })
+study2.save
+
+assignment1 = Assign.new({
+  'study_id' => study1.id,
+  'animal_id' => animal3.id
+  })
+assignment1.save
+
+assignment2 = Assign.new({
+  'study_id' => study1.id,
+  'animal_id' => animal1.id
+  })
+assignment2.save
+
+assignment3 = Assign.new({
+  'study_id' => study2.id,
+  'animal_id' => animal2.id
+  })
+assignment3.save
 
 binding.pry
 nil

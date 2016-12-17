@@ -1,6 +1,6 @@
--- DROP TABLE assigning;
+DROP TABLE assigning;
 DROP TABLE animals;
--- DROP TABLE studies;
+DROP TABLE studies;
 
 CREATE TABLE animals
 (
@@ -12,15 +12,16 @@ CREATE TABLE animals
   
 );
 
--- CREATE TABLE studies
--- (
---   id SERIAL8 primary key,
---   sd VARCHAR(255)
--- );
+CREATE TABLE studies
+(
+  id SERIAL8 primary key,
+  sd VARCHAR(255) not null,
+  purpose VARCHAR(255) not null
+);
 
--- CREATE TABLE assigning
--- ( 
---   id SERIAL8 primary key,
---   animal_id INT8 references animals(id),
---   study_id INT8 references studies(id)
--- );
+CREATE TABLE assigning
+( 
+  id SERIAL8 primary key,
+  animal_id INT8 references animals(id),
+  study_id INT8 references studies(id)
+);
