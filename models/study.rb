@@ -34,10 +34,10 @@ class Study
   end
 
   def self.update( options )
-    sql = 'UPDATE studies SET 
-    sd = "#{options["sd"]}",
-    purpose = "#{options["purpose"]}""
-    WHERE id="#{options["id"]}"'
+    sql = "UPDATE studies SET 
+    sd = '#{options['sd']}',
+    purpose = '#{options['purpose']}'
+    WHERE id='#{options['id']}'"
     SqlRunner.run( sql )
   end
 

@@ -33,13 +33,13 @@ class Animal
   end
 
   def self.passable_health()
-    sql = "SELECT * FROM animals WHERE study_availability!='poor'"
+    sql = "SELECT * FROM animals WHERE study_availability='healthy'"
     results = SqlRunner.run(sql)
     return results.map {|animal| Animal.new(animal)}
   end
 
   def self.poor_health()
-    sql = "SELECT * FROM animals WHERE study_availability='poor'"
+    sql = "SELECT * FROM animals WHERE study_availability!='healthy'"
     results = SqlRunner.run(sql)
     return results.map {|animal| Animal.new(animal)}
   end
