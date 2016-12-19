@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('animal')
 
 class Assign
 
@@ -38,6 +39,15 @@ class Assign
           WHERE an.id = #{@animal_id}"
     results = SqlRunner.run(sql)
     return Animal.new( results.first )
+  end
+
+  def passable()
+    sql = "SELECT * FROM animals
+           INNER JOIN assigning 
+           ON assigning.animal_id = animals.id
+          WHERE animals.id = #{@animal_id}"
+    results = SqlRunner.run(sql)
+    return Animal.new.passable( results.first )
   end
 
   def self.delete_all

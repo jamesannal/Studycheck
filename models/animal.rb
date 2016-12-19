@@ -1,7 +1,8 @@
 require_relative( '../db/sql_runner')
 
 class Animal
-  attr_reader( :id, :age, :species, :date_arrived, :health_status )
+  attr_reader( :id )
+  attr_accessor(:age, :species, :date_arrived, :study_availability )
 
 
   def initialize(options)
@@ -9,11 +10,11 @@ class Animal
     @age = options['age']
     @species = options['species']
     @date_arrived = options['date_arrived']
-    @health_status = options['health_status']
+    @study_availability = options['study_availability']
   end
 
   def save
-   sql = "INSERT INTO animals (age, species, date_arrived, health_status) VALUES (#{@age}, '#{@species}', '#{@date_arrived}', '#{@health_status}') RETURNING *" 
+   sql = "INSERT INTO animals (age, species, date_arrived, study_availability) VALUES (#{@age}, '#{@species}', '#{@date_arrived}', '#{@study_availability}') RETURNING *" 
     results = SqlRunner.run(sql)
     @id = results.first()['id'].to_i
   end
@@ -32,13 +33,13 @@ class Animal
   end
 
   def self.passable_health()
-    sql = "SELECT * FROM animals WHERE health_status!='poor'"
+    sql = "SELECT * FROM animals WHERE study_availability!='poor'"
     results = SqlRunner.run(sql)
     return results.map {|animal| Animal.new(animal)}
   end
 
   def self.poor_health()
-    sql = "SELECT * FROM animals WHERE health_status='poor'"
+    sql = "SELECT * FROM animals WHERE study_availability='poor'"
     results = SqlRunner.run(sql)
     return results.map {|animal| Animal.new(animal)}
   end
@@ -46,5 +47,15 @@ class Animal
   def self.delete_all()
     sql = "DELETE FROM animals"
     SqlRunner.run(sql)
+  end
+
+  def self.update( options )
+    sql = "UPDATE animals SET
+     age = '#{options['age']}',
+     species = '#{options['species']}',
+     date_arrived = '#{options['date_arrived']}',
+     study_availability = '#{options['study_availability']}'
+     WHERE id='#{options['id']}';"
+    SqlRunner.run( sql )
   end
 end

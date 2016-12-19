@@ -1,0 +1,22 @@
+<h1>Studies</h1>
+
+<table>
+  <tr>
+    <th>Study Director</th>
+    <th></th>
+    <th>Study ID</th>
+    <th></th>
+    <th>Purpose of study</th>
+  </tr>
+
+  <% for study in @studies %>
+
+  <tr>
+    <td><%= study.sd %></td>
+    <td>|</td>
+    <td><%= study.id %></td>
+    <td>|</td>
+    <td><%= study.purpose %></td>
+  </tr>
+  <% end %>
+</table>

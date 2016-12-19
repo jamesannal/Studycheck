@@ -1,0 +1,30 @@
+<h2>Add new animal</h2>
+<hr>
+<hr>
+
+<form action="/studycheck/assign" method="post">
+  <label> 
+    Study ID number:
+    <select name="study_id">
+        <% for study in @studies    %>
+         <option value=<%=study.id.to_i %>><%=study.id%> (Purpose: <%=study.purpose%> SD: <%=study.sd %>)</option>
+         <% end %>
+        </select>
+  </label>
+  <label>
+    Animal ID number:
+    <select name="animal_id">
+        <% for animals in @animals    %>
+         <option value=<%=animals.id.to_i %>>Species: <%=animals.species%> Health: <%=animals.study_availability%></option>
+         <% end %>
+        </select>
+<!--     <select name="study_availability">
+      <option value="poor">Poor</option>
+      <option value="okay">Okay</option>
+      <option value="good">Good</option>
+    </select> -->
+  </label>
+  <input type="submit" value="Assign Animal"/>
+</form>
+
+<hr>

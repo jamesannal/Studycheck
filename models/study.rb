@@ -1,7 +1,8 @@
 require_relative( '../db/sql_runner')
 
 class Study
-  attr_reader( :id, :sd, :purpose )
+  attr_reader( :id )
+  attr_accessor( :sd, :purpose )
 
   def initialize(options)
     @id = nil || options['id'].to_i
@@ -10,7 +11,7 @@ class Study
   end
 
   def save()
-    sql = "INSERT INTO studies (sd, purpose) VALUES ( '#{ @sd }', '#{ @purpose}') RETURNING *"
+    sql = "INSERT INTO studies (sd, purpose) VALUES ( '#{@sd}', '#{@purpose}') RETURNING *"
     results = SqlRunner.run(sql)
     @id = results.first()['id'].to_i
   end
@@ -21,7 +22,7 @@ class Study
     return results.map { |study| Study.new( study)}
   end
 
-  def self.find( id )
+  def self.find_by_id( id )
     sql = "SELECT * FROM studies WHERE id=#{id}"
     results = SqlRunner.run(sql)
     return Study.new( results.first)

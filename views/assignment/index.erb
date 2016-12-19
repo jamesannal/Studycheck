@@ -1,0 +1,12 @@
+<h1>Assignment of Animals to Studies</h1>
+
+
+
+<ul>
+  <% for assignment in @assignments %>
+  <li>
+  <p>Animal id number <%= assignment.animal.id %> is assigned to study <%= assignment.study.id %></p>
+<!-- change to say study number has the following animals assigned: animal_id etc -->
+  </li>
+  <% end %>
+</ul>

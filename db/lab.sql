@@ -8,7 +8,7 @@ CREATE TABLE animals
   age INT4 not null,
   species VARCHAR(255) not null,
   date_arrived DATE not null,
-  health_status VARCHAR(255) not null
+  study_availability VARCHAR(255) not null
   
 );
 

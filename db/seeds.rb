@@ -7,7 +7,7 @@ animal1 = Animal.new({
   'age' => 12,
   'species' => "cat",
   'date_arrived' => "2016/12/10",
-  'health_status' => "okay"
+  'study_availability' => "unhealthy"
 })
 
 animal1.save
@@ -16,7 +16,7 @@ animal2 = Animal.new({
   'age' => 4,
   'species' => "monkey",
   'date_arrived' => "2016/12/11",
-  'health_status' => "good"
+  'study_availability' => "healthy"
 })
 animal2.save
 
@@ -24,7 +24,7 @@ animal3 = Animal.new({
   'age' => 20,
   'species' => "cat",
   'date_arrived' => "2016/9/10",
-  'health_status' => "poor"
+  'study_availability' => "healthy"
 })
 animal3.save
 
@@ -39,6 +39,12 @@ study2 = Study.new({
   'purpose' => "can a monkey learn to code?"
   })
 study2.save
+
+study3 = Study.new({
+  'sd' => "James",
+  "purpose" => "what dress best accentuates a rats figure?"
+  })
+study3.save
 
 assignment1 = Assign.new({
   'study_id' => study1.id,
