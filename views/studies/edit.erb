@@ -1,0 +1,27 @@
+<h2>Edit Study Details</h2>
+<hr>
+
+
+<h2>Current Details</h2>
+
+<p>Study Director: <%= @study.sd() %>.  Purpose of Study: <%= @study.purpose() %></p>
+</form>
+
+<form action='/studycheck/studies/<%= @study.id%>' method="post">
+
+  <label> 
+    Study Director:
+    <input type="text" name="sd" value="">
+  </label>
+  
+  <label> 
+    Purpose of Study:
+    <input type="text" name="purpose" value="">
+  </label>
+
+ 
+  <input type="submit" value="Update Study Details"> 
+
+</form>
+
+<hr>

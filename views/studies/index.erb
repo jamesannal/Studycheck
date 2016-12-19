@@ -2,21 +2,27 @@
 
 <table>
   <tr>
-    <th>Study Director</th>
-    <th></th>
     <th>Study ID</th>
     <th></th>
+    <th>Study Director</th>
+    <th></th>
     <th>Purpose of study</th>
+    <th></th>
+    <th>EDIT</th>
   </tr>
 
   <% for study in @studies %>
 
   <tr>
-    <td><%= study.sd %></td>
-    <td>|</td>
     <td><%= study.id %></td>
     <td>|</td>
+    <td><%= study.sd %></td>
+    <td>|</td>
     <td><%= study.purpose %></td>
+    <td>|</td>
+    <td><a href="/studycheck/studies/<%= study.id %>">CHECK/ALTER</a></td>
+
   </tr>
+
   <% end %>
 </table>

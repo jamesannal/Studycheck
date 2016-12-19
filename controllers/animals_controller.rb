@@ -18,12 +18,23 @@ post '/studycheck/animals' do
   erb(:"animals/create")
 end
 
+get '/studycheck/animals/:id' do
+  id = params[:id]
+  @animal = Animal.find_by_id(id)
+  erb(:"animals/show")
+end
+
 get '/studycheck/animals/:id/edit' do
- @animal = Animal.find_by_id(params[:id])
- erb( :"animals/edit" )
+  @animal = Animal.find_by_id(params[:id])
+  erb(:"animals/edit")
 end
 
 post '/studycheck/animals/:id' do
   Animal.update(params)
-  redirect to("/studycheck/animals/#{ params[:id]}")
+  redirect to "/studycheck/animals/#{ params[:id]}"
+end
+
+post '/studycheck/animals/:id/delete' do
+  Animal.destroy( params[:id] )
+  redirect to('/studycheck/animals')
 end

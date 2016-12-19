@@ -29,22 +29,28 @@ animal3 = Animal.new({
 animal3.save
 
 study1 = Study.new({
-  'sd' => "Bob",
-  'purpose' => "can cats do algebra?"
+  'sd' => "none",
+  'purpose' => "not assigned"
   })
 study1.save
 
 study2 = Study.new({
-  'sd' => "Jeff",
-  'purpose' => "can a monkey learn to code?"
+  'sd' => "Bob",
+  'purpose' => "can cats do algebra?"
   })
 study2.save
 
 study3 = Study.new({
+  'sd' => "Jeff",
+  'purpose' => "can a monkey learn to code?"
+  })
+study3.save
+
+study4 = Study.new({
   'sd' => "James",
   "purpose" => "what dress best accentuates a rats figure?"
   })
-study3.save
+study4.save
 
 assignment1 = Assign.new({
   'study_id' => study1.id,

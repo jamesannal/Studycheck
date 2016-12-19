@@ -32,6 +32,18 @@ class Assign
     return Study.new( results.first )
   end
 
+  def self.find( id )
+    sql = "SELECT * FROM assigning WHERE id=#{id}"
+    results = SqlRunner.run(sql)
+    return Assign.new( results.first)
+  end
+
+  def assignment()
+    sql = "SELECT * FROM assigning"
+    results = SqlRunner.run(sql)
+    return Assign.new( results.first )
+  end
+
   def animal()
     sql = "SELECT * FROM animals an
           INNER JOIN assigning a
@@ -55,7 +67,7 @@ class Assign
     SqlRunner.run(sql)
   end
 
-  def self.delete(id)
+  def self.destroy(id)
     sql = "DELETE FROM assigning where id = #{id}"
     SqlRunner.run(sql)
   end

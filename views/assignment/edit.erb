@@ -1,0 +1,33 @@
+<h2> Edit Study Assignment</h2>
+<hr>
+
+<h2>Current Assignment</h2>
+
+<p>Animal ID Number: <%= @animal.id %>. Study ID Number: <%= @study.purpose %>.</p>
+
+<h2>Edit Animal Details</h2>
+<form action='/studycheck/assign/<%= @assignment.id%>' method="post">
+  <label>
+    Study ID number:
+    <select name="study_id">
+      <% for study in @studies %> 
+      <option value=<%= study.id.to_i %>><%=study.id%> (Purpose: <%=study.purpose%> SD: <%=study.sd%>)</option>
+      <% end %>
+      </select>
+  </label>
+
+  <label>
+    Animals:
+    <select name="animal_id">
+      <% for animals in @animals %>
+      <option value=<%= animals.id.to_i %>> Species: <%=animals.species%> Health:<%= animals.study_availability%>
+      </option>
+      <% end %>
+    </select>
+  </label>
+
+  <input type="submit" value="Update Assignment Details"> 
+
+</form>
+
+<hr>

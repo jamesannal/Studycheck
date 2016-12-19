@@ -11,10 +11,12 @@
     <th>Date of Arrival on Site</th>
     <th></th>
     <th>Health Status</th>
+    <th></th>
+    <th>EDIT</th>
   </tr>
 
   <% for animal in @animals %>
-  
+
   <tr>
     <td><%= animal.id %></td>
     <td>|</td>
@@ -25,7 +27,11 @@
     <td><%= animal.date_arrived %></td>
     <td>|</td>
     <td><%= animal.study_availability %></td>
+    <td>|</td>
+    <td><a href="/studycheck/animals/<%= animal.id %>">CHECK/ALTER</a></td>
+
   </tr>
+
   <% end %>
 </table>
 

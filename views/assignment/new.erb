@@ -1,4 +1,4 @@
-<h2>Add new animal</h2>
+<h2>Add new animal to study</h2>
 <hr>
 <hr>
 
@@ -12,12 +12,12 @@
         </select>
   </label>
   <label>
-    Animal ID number:
+    Animals:
     <select name="animal_id">
         <% for animals in @animals    %>
          <option value=<%=animals.id.to_i %>>Species: <%=animals.species%> Health: <%=animals.study_availability%></option>
          <% end %>
-        </select>
+      </select>
 <!--     <select name="study_availability">
       <option value="poor">Poor</option>
       <option value="okay">Okay</option>

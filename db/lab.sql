@@ -1,4 +1,4 @@
-DROP TABLE assigning;
+DROP TABLE assigning; 
 DROP TABLE animals;
 DROP TABLE studies;
 
@@ -22,6 +22,6 @@ CREATE TABLE studies
 CREATE TABLE assigning
 ( 
   id SERIAL8 primary key,
-  animal_id INT8 references animals(id),
-  study_id INT8 references studies(id)
+  animal_id INT8 references animals(id) ON DELETE CASCADE,
+  study_id INT8 references studies(id) ON DELETE CASCADE
 );

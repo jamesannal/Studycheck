@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="/style.css">
+
+
+<h2>Study Details</h2>
+
+<p>Study Director: <%= @study.sd() %></p>
+<p>Purpose of Study: <%= @study.purpose() %></p>
+</form>
+
+
+<a href="/studycheck/studies/<%= @study.id %>/edit">UPDATE STUDY</a>
+
+<form action="/studycheck/studies/<%= @study.id %>/delete" method="post">
+  <input type="submit" value="Delete"/>
+</form>

@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="/style.css">
+
+<h2>Assignment Details</h2>
+
+<p>Animal id number <%= @assignment.animal_id %> is assigned to study <%= @assignment.study_id %>
+<!-- 
+<a href="/studycheck/assign/<%= @assignment.id %>/edit">UPDATE ASSIGNMENT</a>
+ -->
+<form action="/studycheck/assign/<%= @assignment.id %>/delete" method="post">
+  <input type="submit" value="Delete"/>
+</form>

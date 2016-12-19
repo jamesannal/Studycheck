@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="/style.css">
+
+
+<h2>Animal Details</h2>
+
+<p>Age: <%= @animal.age() %></p>
+<p>Species: <%= @animal.species() %></p>
+<p>Date arrived on site: <%=  @animal.date_arrived %></p>
+<p>Health status of animal: <%= @animal.study_availability %></p>
+</form>
+
+<a href="/studycheck/animals/<%= @animal.id %>/edit">UPDATE ANIMAL</a>
+
+<form action="/studycheck/animals/<%= @animal.id %>/delete" method="post">
+  <input type="submit" value="Delete"/>
+</form>

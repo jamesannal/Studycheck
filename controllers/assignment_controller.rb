@@ -19,12 +19,24 @@ get '/studycheck/assign/new' do
 end
 
 post '/studycheck/assign' do
-  assignment = Assign.new(params)
-  assignment.save
+  @assignment = Assign.new(params)
+  @assignment.save
+  erb( :"assignment/create")
+end
+
+get '/studycheck/assign/:id' do
+  id = params[:id]
+  @assignment = Assign.find(id)
+  erb(:"assignment/show")
+end
+  
+get '/studycheck/assign/:id/edit' do
+  @assignment = Assign.find(params[:id])
+  erb(:"assignment/edit")
+end  
+
+post '/studycheck/assign/:id/delete' do
+  Assign.destroy(params[:id])
   redirect to("/studycheck/assign")
 end
 
-post '/studycheck/assign/:id/delete' do
-  assignment.destroy(params[:id])
-  redirect to("/assign")
-end

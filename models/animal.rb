@@ -55,7 +55,12 @@ class Animal
      species = '#{options['species']}',
      date_arrived = '#{options['date_arrived']}',
      study_availability = '#{options['study_availability']}'
-     WHERE id='#{options['id']}';"
+     WHERE id='#{options['id']}'"
+    SqlRunner.run( sql )
+  end
+
+  def self.destroy( id )
+    sql = "DELETE FROM animals WHERE id=#{id}"
     SqlRunner.run( sql )
   end
 end

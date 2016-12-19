@@ -1,9 +1,19 @@
-<h2>Edit Animal Details</h2>
-<hr>
+<h2>Current Animal Details</h2>
 <hr>
 
-<form action='/animals/<%=@animal.id%>' method="post">
+<p>ID Number: <%= @animal.id()%>. Age: <%= @animal.age() %>.  
+Species: <%= @animal.species() %>.  
+Date arrived on site: <%=  @animal.date_arrived %>.  
+Health status of animal: <%= @animal.study_availability %>.</p>
+
+<h2>Edit Animal Details</h2>
+<form action='/studycheck/animals/<%= @animal.id%>' method="post">
   <label>
+
+  <label> 
+    Age:
+    <input type="number" name="age" value="" min="0" max="100">
+  </label>
 
   <label>
     Species: 
@@ -32,7 +42,7 @@
 
  
 
-  <input type="submit" value="Update Details"> 
+  <input type="submit" value="Update Animal Details"> 
 
 </form>
 
