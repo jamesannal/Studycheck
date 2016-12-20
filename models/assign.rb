@@ -53,13 +53,12 @@ class Assign
     return Animal.new( results.first )
   end
 
-  def passable()
-    sql = "SELECT * FROM animals
-           INNER JOIN assigning 
-           ON assigning.animal_id = animals.id
-          WHERE animals.id = #{@animal_id}"
-    results = SqlRunner.run(sql)
-    return Animal.new.passable( results.first )
+  def self.update( options )
+    sql = "UPDATE assigning SET
+     study_id = '#{options['study_id']}',
+     animal_id = '#{options['animal_id']}'
+     WHERE id='#{options['id']}'"
+    SqlRunner.run( sql )
   end
 
   def self.delete_all

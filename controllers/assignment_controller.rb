@@ -13,6 +13,7 @@ get '/studycheck/assign' do
 end
 
 get '/studycheck/assign/new' do
+  @assign = Assign.all
   @animals = Animal.all
   @studies = Study.all
   erb(:"assignment/new")
@@ -32,8 +33,15 @@ end
   
 get '/studycheck/assign/:id/edit' do
   @assignment = Assign.find(params[:id])
+  @studies = Study.all
+  @animals = Animal.all
   erb(:"assignment/edit")
 end  
+
+post '/studycheck/assign/:id' do
+  Assign.update(params)
+  redirect to "/studycheck/assign"
+end
 
 post '/studycheck/assign/:id/delete' do
   Assign.destroy(params[:id])

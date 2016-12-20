@@ -15,7 +15,12 @@ end
 post '/studycheck/animals' do
   @animal = Animal.new(params)
   @animal.save()
-  erb(:"animals/create")
+  erb( :"animals/create")
+end
+
+get '/studycheck/animals/ill' do
+  @animals = Animal.all()
+  erb( :"animals/ill" )
 end
 
 get '/studycheck/animals/:id' do

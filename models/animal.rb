@@ -32,18 +32,7 @@ class Animal
     return result
   end
 
-  def self.passable_health()
-    sql = "SELECT * FROM animals WHERE study_availability='healthy'"
-    results = SqlRunner.run(sql)
-    return results.map {|animal| Animal.new(animal)}
-  end
-
-  def self.poor_health()
-    sql = "SELECT * FROM animals WHERE study_availability!='healthy'"
-    results = SqlRunner.run(sql)
-    return results.map {|animal| Animal.new(animal)}
-  end
-
+  
   def self.delete_all()
     sql = "DELETE FROM animals"
     SqlRunner.run(sql)

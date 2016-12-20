@@ -1,12 +1,25 @@
 <h1>Assignment of Animals to Studies</h1>
+<p>
+</p>
+<p>
+</p>
+</h1>
+<hr>
+<p>
+<hr>
+<p>
+</p>
+
+<table>
+
+  <tr>
+    <% for assignment in @assignments %>
 
 
+    <th><%= assignment.study.purpose.capitalize %> has the following animal assigned to it: ID <%=assignment.animal_id %> <a href="/studycheck/assign/<%= assignment.id %>">CHECK/ALTER</a></th>
 
-<ul>
-  <% for assignment in @assignments %>
-  <li>
-  <p>Animal id number <%= assignment.animal_id %> is assigned to <%= assignment.study.purpose %> <a href="/studycheck/assign/<%= assignment.id %>">ALTER ASSIGNMENT</a> </p>
+</tr>
 
-  </li>
-  <% end %>
-</ul>
+    <% end %>
+
+  </table>

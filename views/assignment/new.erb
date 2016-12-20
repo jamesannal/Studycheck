@@ -11,15 +11,19 @@
          <% end %>
         </select>
   </label>
-  <label>
+
+  <p><label>
     Animals:
     <select name="animal_id">
         <% for animals in @animals    %>
-         <option value=<%=animals.id.to_i %>>Species: <%=animals.species%> Health: <%=animals.study_availability%></option>
+        <% if animals.study_availability == 'healthy' %> 
+         <option value=<%=animals.id.to_i %>> ID: <%= animals.id %> Species: <%=animals.species%> Health: <%=animals.study_availability%></option>
          <% end %>
-      </select>
+         <% end %>
+    </select>
 
   </label>
+  </p>
   <input type="submit" value="Assign Animal"/>
 </form>
 

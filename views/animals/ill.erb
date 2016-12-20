@@ -1,14 +1,4 @@
-<h1>Healthy Animals
-<p>
-</p>
-<p>
-</p>
-</h1>
-<hr>
-<p>
-<hr>
-<p>
-</p>
+<h1>Animals ready to see the "Doctor"</h1>
 
 <table>
   <tr>
@@ -18,15 +8,15 @@
     <th></th>
     <th>Species</th>
     <th></th>
-    <th>Date of Arrival</th>
+    <th>Date of Arrival on Site</th>
     <th></th>
     <th>Health Status</th>
     <th></th>
-    <th>EDIT</th>
+    <th>DOCTOR'S OFFICE</th>
   </tr>
 
   <% for animal in @animals %>
-  <% if animal.study_availability == 'healthy' %>
+  <% if animal.study_availability != 'healthy' %>
 
   <tr>
     <td><%= animal.id %></td>
