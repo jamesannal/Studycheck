@@ -16,7 +16,11 @@
     <% for assignment in @assignments %>
 
 
-    <th><%= assignment.study.purpose.capitalize %> has the following animal assigned to it: ID <%=assignment.animal_id %> <a href="/studycheck/assign/<%= assignment.id %>">CHECK/ALTER</a></th>
+    <th><%= assignment.study.purpose.capitalize %> has the following animal assigned to it: ID <%=assignment.animal_id %> </th>
+
+    <th><form action="/studycheck/assign/<%= assignment.id %>"" method="get">
+      <input type="submit" class="buttons" value="Alter"/>
+    </form></th>
 
 </tr>
 

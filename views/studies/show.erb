@@ -8,9 +8,12 @@
 </form>
 
 
-<a href="/studycheck/studies/<%= @study.id %>/edit">UPDATE STUDY</a>
-
-<form action="/studycheck/studies/<%= @study.id %>/delete" method="post">
-
-  <input type="submit" value="Delete"/>
+<form action="/studycheck/studies/<%= @study.id %>/edit" method="get">
+  <input type="submit" class="buttons" value="Update"/>
 </form>
+
+<form action="/studycheck/animals/<%= @study.id %>/delete" method="post">
+  <input type="submit" class="buttons" value="Delete"/>
+</form>
+
+

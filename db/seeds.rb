@@ -28,6 +28,22 @@ animal3 = Animal.new({
 })
 animal3.save
 
+animal4 = Animal.new({
+  'age' => 1,
+  'species' => "mouse",
+  'date_arrived' => "2016/3/23",
+  'study_availability' => "healthy"
+})
+animal4.save
+
+animal5 = Animal.new({
+  'age' => 4,
+  'species' => "rat",
+  'date_arrived' => "2016/5/23",
+  'study_availability' => "healthy"
+})
+animal4.save
+
 study1 = Study.new({
   'sd' => "none",
   'purpose' => "not assigned"

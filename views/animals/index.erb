@@ -12,7 +12,7 @@
 
 <table>
   <tr>
-    <th>ID number</th>
+    <th>ID</th>
     <th></th>
     <th>Age</th>
     <th></th>
@@ -39,7 +39,9 @@
     <td>|</td>
     <td><%= animal.study_availability %></td>
     <td>|</td>
-    <td><a href="/studycheck/animals/<%= animal.id %>">CHECK/ALTER</a></td>
+    <td><form action="/studycheck/animals/<%= animal.id %>" method="get">
+    <input type="submit" class="buttons" value="Check/Alter">
+    </form></td>
 
   </tr>
   <% end %>

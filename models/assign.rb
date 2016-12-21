@@ -70,4 +70,5 @@ class Assign
     sql = "DELETE FROM assigning where id = #{id}"
     SqlRunner.run(sql)
   end
+
 end

@@ -11,8 +11,11 @@
 <p>Health status of animal: <%= @animal.study_availability %></p>
 
 
-<a href="/studycheck/animals/<%= @animal.id %>/edit">UPDATE ANIMAL</a>
+<form action="/studycheck/animals/<%= @animal.id %>/edit" method="get"></a>
+<input type="submit" class="buttons" value="Update">
+
+</form>
 
 <form action="/studycheck/animals/<%= @animal.id %>/delete" method="post">
-  <input type="submit" value="Delete"/>
+  <input type="submit" class="buttons" value="Delete"/>
 </form>

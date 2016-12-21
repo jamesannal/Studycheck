@@ -12,11 +12,30 @@ body {
   background-size: cover;margin: 0;
 }
 
-ul {
+ul ul{
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 2;
   display: inline;
+
+}
+h1 p {
+  text-align: right;
+}
+
+table {
+  background: ivory;
+  box-sizing: content-box;
+  width: 500px;
+  height: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  font: normal 16px/1 Arial;
+  color: black);
+  text-align: center;
+
 }
 
 h1 {
@@ -35,16 +54,20 @@ a {
   -webkit-text-decoration-skip: objects;
 }
 
+tr th {
+  text-align: center;
+}
+
 td, th {
   text-align: left;
 }
 
 td {
-  padding: 10px 20px 0px 0px;
+  padding: 10px 10px 0px 0px;
 }
 
 th, {
-  padding: 0px 20px 10px 0px;
+  padding: 0px 18px 10px 0px;
   border-bottom: 1px solid papayawhip;
 }
 form,
@@ -53,53 +76,38 @@ form,
   border-collapse: collapse;
 }
 
-div,
-table,
-tr,
-{
-  background: ivory;
-  box-sizing: content-box;
-  width: 400px;
-  height: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 40px;
-  border: none;
-  font: normal 16px/1 Arial;
-  color: black);
-  text-align: center;
 
-}
 
-a:active,
 a:hover {
-  color: cyan;
+  color: red;
   outline-width: 0;
 }
 
-abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+
+.buttons {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid #018dc4;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font: normal 16px/normal "arial", Times, serif;
+  color: rgba(255,255,255,0.9);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: #0199d9;
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+  text-shadow: -1px -1px 0 rgba(15,73,168,0.66) ;
+  -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 
-b,
-strong {
-  font-weight: inherit;
-}
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-code,
-kbd,
-samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
 
 small {
   font-size: 70%;
@@ -109,10 +117,10 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: sans-serif; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
+  font-family: arial;
+  font-size: 90%;
+  line-height: 1.5;
+ 
 }
 
 [type="checkbox"],

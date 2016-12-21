@@ -2,13 +2,19 @@
 
 <h2>Assignment Details</h2>
 
-<div><p><%= @assignment.study_id %> has the following animals assigned to it: <%= @assignment.animal_id %>
+<div><p>Study <%= @assignment.study_id %> has the following animal assigned to it: <%= @assignment.animal_id %>
 
-<a href="/studycheck/assign/<%= @assignment.id %>/edit">UPDATE ASSIGNMENT</a>
+<form action="/studycheck/assign/<%= @assignment.id %>/edit" method="get">
+<input type="submit" class="buttons" value="Update">
 
-<form action="/studycheck/assign/<%= @assignment.id %>/delete" method="post">
+</form>
 
-  <input type="submit" value="Delete"/>
+
+  <form action="/studycheck/assign/<%= @assignment.id %>/delete" method="post">
+
+  <input type="submit" class="buttons" value="Delete"/>
+
 </form>
 </p>
 </div>
+
