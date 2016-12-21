@@ -46,7 +46,7 @@ animal4.save
 
 study1 = Study.new({
   'sd' => "none",
-  'purpose' => "not assigned"
+  'purpose' => "N/A"
   })
 study1.save
 

@@ -8,6 +8,7 @@
 Species: <%= @animal.species() %>.  
 Date arrived on site: <%=  @animal.date_arrived %>.  
 Health status of animal: <%= @animal.study_availability %>.</form>
+
 <p>
 </p>
 <hr>
@@ -15,6 +16,8 @@ Health status of animal: <%= @animal.study_availability %>.</form>
 <hr>
 <p>
 </p>
+
+<div class="side">
 <h2>Edit Animal Details</h2>
 <form action='/studycheck/animals/<%= @animal.id%>' method="post">
 
@@ -22,7 +25,8 @@ Health status of animal: <%= @animal.study_availability %>.</form>
     Age:
     <input type="number" name="age" value="" min="0" max="100">
   </label>
-
+  <p>
+  </p>
   <label>
     Species: 
     <select name="species">
@@ -33,12 +37,14 @@ Health status of animal: <%= @animal.study_availability %>.</form>
       <option value="rat">Rat</option>
     </select>
   </label>
-
+  <p>
+  </p>
   <label> 
     Date Arrived:
     <input type="text" name="date_arrived" placeholder="yyyy-mm-dd">
   </label>
-
+  <p>
+  </p>
 
   <label>
     Health Status:

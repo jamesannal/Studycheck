@@ -13,7 +13,7 @@ get '/studycheck/assign' do
 end
 
 get '/studycheck/assign/new' do
-  @assign = Assign.all
+  @assignments = Assign.all
   @animals = Animal.all
   @studies = Study.all
   erb(:"assignment/new")

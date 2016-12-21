@@ -9,21 +9,26 @@
 <hr>
 <p>
 </p>
+<div class="side">
+  <table>
 
-<table>
-
-  <tr>
-    <% for assignment in @assignments %>
+    <tr>
+      <% for assignment in @assignments %>
 
 
-    <th><%= assignment.study.purpose.capitalize %> has the following animal assigned to it: ID <%=assignment.animal_id %> </th>
+      <th><%= assignment.study.purpose.capitalize %> has the following animal assigned to it: ID <%=assignment.animal_id %> </th>
 
-    <th><form action="/studycheck/assign/<%= assignment.id %>"" method="get">
+      <th><form action="/studycheck/assign/<%= assignment.id %>"" method="get">
       <input type="submit" class="buttons" value="Alter"/>
     </form></th>
 
-</tr>
+    </tr>
 
     <% end %>
 
-  </table>
+</table>
+
+  </div>
+  <form action="http://localhost:4567/studycheck/assign/new" method="get">
+  <input type="submit" class="buttons" value="                                 Assign unassigned new animal to study                                 ">
+  </form>
